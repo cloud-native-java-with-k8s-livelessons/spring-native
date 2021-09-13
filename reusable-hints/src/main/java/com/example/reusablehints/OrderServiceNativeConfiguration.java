@@ -18,7 +18,7 @@ public class OrderServiceNativeConfiguration implements NativeConfiguration {
 	@Override
 	public List<HintDeclaration> computeHints(TypeSystem typeSystem) {
 		var hd = new HintDeclaration();
-		var orderServiceClassName = "com.example.hints.OrderService";
+		var orderServiceClassName = "com.example.basics.OrderService";
 		hd.addProxyDescriptor(new JdkProxyDescriptor(List.of(orderServiceClassName)));
 		hd.addDependantType(orderServiceClassName, new AccessDescriptor(AccessBits.ALL));
 		System.out.println("adding reflective and proxy hints for " + orderServiceClassName + '.');
